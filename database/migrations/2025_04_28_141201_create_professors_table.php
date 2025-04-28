@@ -15,7 +15,13 @@ return new class extends Migration
     {
         Schema::create('professors', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+
+			$table->longText('comments')->nullable();
             $table->timestamps();
+            // Foreign keys
+			$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+			
         });
     }
 
