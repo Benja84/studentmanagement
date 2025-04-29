@@ -18,6 +18,9 @@ use Inertia\Inertia;
 Route::get('/welcome',function(){
     return view('dashboard.index');
 });
+Route::get('/dashboard_v2',function(){
+    return view('dashboard.dashboard');
+});
 Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
