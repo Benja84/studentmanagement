@@ -13,7 +13,7 @@ const props = defineProps({
 const user = usePage().props.auth.user;
 
 const form = useForm({
-    name: user.name,
+    firstname: user.lastname,
     email: user.email,
 });
 </script>
@@ -36,13 +36,12 @@ const form = useForm({
                     id="name"
                     type="text"
                     class="mt-1 block w-full"
-                    v-model="form.name"
-                    required
+                    v-model="form.firstname"
                     autofocus
                     autocomplete="name"
                 />
 
-                <InputError class="mt-2" :message="form.errors.name" />
+                <InputError class="mt-2" :message="form.errors.firstname" />
             </div>
 
             <div>
